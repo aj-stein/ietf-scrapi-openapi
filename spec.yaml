@@ -33,6 +33,13 @@ paths:
       summary: Resolve service configuration
       description: Get the configuration a SCRAPI-conformant Transparency Service
       operationId: TSConfigurationGet
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExampleRegistrationPolicy'
   /.well-known/issuer/tenant/{tenantId}:
     get:
       summary: Resolve an Issuer
@@ -105,3 +112,54 @@ paths:
       summary: Request a Nonce
       description: Request a nonce to provide with other operations and provide proof of possession for clients holding Signed Statements.
       operationId: NonceGet
+components:
+  schemas:
+    ExampleRegistrationPolicy:
+      type: object
+      properties:
+        issuer:
+          type: string
+          examples: ["https://transparency.example"]
+        registration_endpoint:
+          type: string
+          examples: ["https://transparency.example/entries"]
+        nonce_endpoint:
+          type: string
+          examples: ["https://transparency.example/nonce"]
+        registration_policy:
+          type: string
+          examples: ["https://transparency.example/statements/urn:ietf:params:scitt:statement:sha-256:base64url:5i6UeRzg1...qnGmr1o"]
+        supported_signature_algorithms:
+          type: array
+          items:
+            type: string
+            examples: ["ES256"]
+        jwks:
+          type: object
+          properties:
+            keys:
+              type: array
+              items:
+                type: object
+                properties:
+                  kid:
+                    type: string
+                    examples: ["urn:ietf:params:oauth:jwk-thumbprint:sha-256:DgyowWs04gfVRim5i1WlQ-HFFFKI6Ltqulj1rXPagRo"]
+                  alg:
+                    type: string
+                    examples: ["ES256"]
+                  use:
+                    type: string
+                    examples: ["sig"]
+                  kty:
+                    type: string
+                    examples: ["EC"]
+                  crv:
+                    type: string
+                    examples: ["P-256"]
+                  x:
+                    type: string
+                    examples: ["p-kZ4uOASt9IjQRTrWikGnlbGb-z3LU1ltwRjZaOS9w"]
+                  y:
+                    type: string
+                    examples: ["ymXE1yltJPXgjQSRe9NweN3TLlSUALYZTzy83NVfdg0"]
