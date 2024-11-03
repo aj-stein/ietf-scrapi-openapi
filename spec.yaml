@@ -1,0 +1,36 @@
+openapi: 3.1.0
+info:
+  title: API for draft-ietf-scitt-scrapi
+  description: |-
+    This is API specification that allows OpenAPI-compatible software to generate
+    server or client software conforming to the API defined in the Internet Draft
+    [draft-ietf-scitt-scrapi](https://datatracker.ietf.org/doc/draft-ietf-scitt-scrapi/).
+
+    Some useful links:
+    - [The official Internet Draft](https://datatracker.ietf.org/doc/draft-ietf-scitt-scrapi/)
+    - [The editors' GitHub repo](https://github.com/ietf-wg-scitt/draft-ietf-scitt-scrapi/)
+
+  contact:
+    email: iam@ajstein.me
+  license:
+    name: GNU General Public License  v3.0
+    url: https://github.com/aj-stein/ietf-scrapi-openapi/blob/main/LICENSE
+  version: 0.1.0
+externalDocs:
+  description: Find out more about this project
+  url: https://github.com/aj-stein/ietf-scrapi-openapi
+servers:
+  - url: https://transparency.example
+tags:
+  - name: Architecture
+    description: SCITT Architecture
+    externalDocs:
+      description: Official draft
+      url: https://datatracker.ietf.org/doc/draft-ietf-scitt-architecture
+paths:
+  /.well-known/transparency-configuration:
+    get:
+      summary: Get the service configuration
+      description: Get the configuration a SCRAPI-conformant Transparency Service
+      operationId: GetTSConfiguration
+
