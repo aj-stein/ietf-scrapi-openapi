@@ -38,6 +38,14 @@ paths:
       summary: Resolve an Issuer
       description: Resolve an Issuer for this Transparency Service by their ID.
       operationId: IssuerGet
+      parameters:
+        - name: tenantId
+          in: path
+          description: ID of the Issuer to be resolve
+          required: true
+          schema:
+            type: integer
+            format: int64
   /entries:
     post:
       summary: Register a Signed Statement
@@ -53,16 +61,40 @@ paths:
       summary: Resolve a Statement
       description: Retrieve a Statement by its ID to retrieve its content.
       operationId: StatementGet
+      parameters:
+        - name: statementId
+          in: path
+          description: ID of the Statement to resolve in urn form
+          required: true
+          schema:
+            type: string
+            format: uri
   /signed-statements/{signedStatementId}:
     get:
       summary: Resolve a Signed Statement
       description: Retrieve a Signed Statement by its ID to retrieve its content.
       operationId: SignedStatementGet
+      parameters:
+        - name: signedStatementId
+          in: path
+          description: ID of the Signed Statement to resolve in urn form
+          required: true
+          schema:
+            type: string
+            format: uri      
   /receipts/{receiptId}:
     get:
       summary: Resolve a Receipt
       description: Retrieve a Receipt by its ID to retrieve its content.
       operationId: ReceiptGet
+      parameters:
+        - name: receiptId
+          in: path
+          description: ID of the Receipt to resolve in urn form
+          required: true
+          schema:
+            type: string
+            format: uri      
   /exchange/receipts:
     get:
       summary: Exchange a Receipt
