@@ -33,4 +33,10 @@ paths:
       summary: Get the service configuration
       description: Get the configuration a SCRAPI-conformant Transparency Service
       operationId: GetTSConfiguration
+  /entries:
+    post:
+      summary: Register a Signed Statement
+      description: Register a Signed Statement on a SCRAPI-conformant Transparency Service
+      operationId: RegisterSignedStatement
+
 
