@@ -30,7 +30,7 @@ tags:
 paths:
   /.well-known/transparency-configuration:
     get:
-      summary: Get the service configuration
+      summary: Resolve service configuration
       description: Get the configuration a SCRAPI-conformant Transparency Service
       operationId: TSConfigurationGet
   /.well-known/issuer/tenant/{tenantId}:
@@ -48,3 +48,28 @@ paths:
       summary: Issue a Signed Statement
       description: Issue a Signed Statement client lacks the ability to perform complex cryptographic operations, but can be authenticated and report statements and measurements.
       operationId: SignedStatementIssue
+  /statements/{statementId}:
+    get:
+      summary: Resolve a Statement
+      description: Retrieve a Statement by its ID to retrieve its content.
+      operationId: StatementGet
+  /signed-statements/{signedStatementId}:
+    get:
+      summary: Resolve a Signed Statement
+      description: Retrieve a Signed Statement by its ID to retrieve its content.
+      operationId: SignedStatementGet
+  /receipts/{receiptId}:
+    get:
+      summary: Resolve a Receipt
+      description: Retrieve a Receipt by its ID to retrieve its content.
+      operationId: ReceiptGet
+  /exchange/receipts:
+    get:
+      summary: Exchange a Receipt
+      description: Retrieve an updated Receipt by resubmitting an old or expired receipt.
+      operationId: ReceiptExchange
+  /nonce:
+    get:
+      summary: Request a Nonce
+      description: Request a nonce to provide with other operations and provide proof of possession for clients holding Signed Statements.
+      operationId: NonceGet
