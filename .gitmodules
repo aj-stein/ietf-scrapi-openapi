@@ -1,0 +1,6 @@
+[submodule "vendor/scrapi_spec"]
+	path = vendor/scrapi_spec
+	url = https://github.com/ietf-wg-scitt/draft-ietf-scitt-scrapi.git
+[submodule "vendor/openapi_spec"]
+	path = vendor/openapi_spec
+	url = https://github.com/OAI/OpenAPI-Specification
