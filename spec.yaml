@@ -20,7 +20,7 @@ externalDocs:
   description: Find out more about this project
   url: https://github.com/aj-stein/ietf-scrapi-openapi
 servers:
-  - url: https://transparency.example
+  - url: https://example.net
 tags:
   - name: Architecture
     description: SCITT Architecture
@@ -135,16 +135,16 @@ components:
       properties:
         issuer:
           type: string
-          examples: ["https://transparency.example"]
+          examples: ["https://example.net"]
         registration_endpoint:
           type: string
-          examples: ["https://transparency.example/entries"]
+          examples: ["https://example.net/entries"]
         nonce_endpoint:
           type: string
-          examples: ["https://transparency.example/nonce"]
+          examples: ["https://example.net/nonce"]
         registration_policy:
           type: string
-          examples: ["https://transparency.example/statements/urn:ietf:params:scitt:statement:sha-256:base64url:5i6UeRzg1...qnGmr1o"]
+          examples: ["https://example.net/statements/urn:ietf:params:scitt:statement:sha-256:base64url:5i6UeRzg1...qnGmr1o"]
         supported_signature_algorithms:
           type: array
           items:
