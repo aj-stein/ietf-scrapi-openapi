@@ -33,6 +33,11 @@ paths:
       summary: Get the service configuration
       description: Get the configuration a SCRAPI-conformant Transparency Service
       operationId: TSConfigurationGet
+  /.well-known/issuer/tenant/{tenantId}:
+    get:
+      summary: Resolve an Issuer
+      description: Resolve an Issuer for this Transparency Service by their ID.
+      operationId: IssuerGet
   /entries:
     post:
       summary: Register a Signed Statement
