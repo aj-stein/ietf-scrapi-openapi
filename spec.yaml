@@ -58,11 +58,27 @@ paths:
       summary: Register a Signed Statement
       description: Register a Signed Statement on a SCRAPI-conformant Transparency Service
       operationId: SignedStatementRegister
+      requestBody:
+        description: the request body is the Signed Statement in COSE format 
+        required: true
+        content:
+          application/cose:
+            schema:
+              type: string
+              format: binary
   /signed-statements/issue:
     post:
       summary: Issue a Signed Statement
       description: Issue a Signed Statement client lacks the ability to perform complex cryptographic operations, but can be authenticated and report statements and measurements.
       operationId: SignedStatementIssue
+      requestBody:
+        description: the request body is the Signed Statement to issue in COSE format 
+        required: true
+        content:
+          application/cose:
+            schema:
+              type: string
+              format: binary      
   /statements/{statementId}:
     get:
       summary: Resolve a Statement
