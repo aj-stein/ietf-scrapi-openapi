@@ -32,11 +32,14 @@ paths:
     get:
       summary: Get the service configuration
       description: Get the configuration a SCRAPI-conformant Transparency Service
-      operationId: GetTSConfiguration
+      operationId: TSConfigurationGet
   /entries:
     post:
       summary: Register a Signed Statement
       description: Register a Signed Statement on a SCRAPI-conformant Transparency Service
       operationId: RegisterSignedStatement
-
-
+  /signed-statements/issue:
+    post:
+      summary: Issue a Signed Statement
+      description: Issue a Signed Statement client lacks the ability to perform complex cryptographic operations, but can be authenticated and report statements and measurements.
+      operationId: IssueSignedStatement
